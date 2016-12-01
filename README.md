@@ -16,7 +16,12 @@ tar -xzf bash-4.3.tar.gz
 git clone -b 4.3 --single-branch https://github.com/kadler/bash-patches.git patches
 cd bash-4.3
 cp ../patches/any/*.patch .
+cp ../patches/any/bash[0-9]*-[0-9]* .
 cp ../patches/7.1/*.patch .
+for f in bash[0-9]*-[0-9]*
+do
+  patch -p0 < $f
+done
 for f in *.patch
 do
   patch -p1 < $f

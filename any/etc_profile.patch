@@ -1,0 +1,237 @@
+diff -ru a/doc/bash.1 b/doc/bash.1
+--- a/doc/bash.1	2016-08-26 08:45:17.000000000 -0500
++++ b/doc/bash.1	2017-02-22 17:43:58.643459657 -0600
+@@ -203,7 +203,7 @@
+ .TP
+ .B \-\-noprofile
+ Do not read either the system-wide startup file
+-.FN /etc/profile
++.FN /QOpenSys/etc/profile
+ or any of the personal initialization files
+ .IR ~/.bash_profile ,
+ .IR ~/.bash_login ,
+@@ -315,7 +315,7 @@
+ .B bash
+ is invoked as an interactive login shell, or as a non-interactive shell
+ with the \fB\-\-login\fP option, it first reads and
+-executes commands from the file \fI/etc/profile\fP, if that
++executes commands from the file \fI/QOpenSys/etc/profile\fP, if that
+ file exists.
+ After reading that file, it looks for \fI~/.bash_profile\fP,
+ \fI~/.bash_login\fP, and \fI~/.profile\fP, in that order, and reads
+@@ -372,7 +372,7 @@
+ When invoked as an interactive login shell, or a non-interactive
+ shell with the \fB\-\-login\fP option, it first attempts to
+ read and execute commands from
+-.I /etc/profile
++.I /QOpenSys/etc/profile
+ and
+ .IR ~/.profile ,
+ in that order.
+@@ -10547,7 +10547,7 @@
+ .FN /bin/bash
+ The \fBbash\fP executable
+ .TP
+-.FN /etc/profile
++.FN /QOpenSys/etc/profile
+ The systemwide initialization file, executed for login shells
+ .TP
+ .FN ~/.bash_profile
+diff -ru a/doc/bash.html b/doc/bash.html
+--- a/doc/bash.html	2016-08-31 09:24:29.000000000 -0500
++++ b/doc/bash.html	2017-02-22 17:43:58.623459539 -0600
+@@ -247,7 +247,7 @@
+ <DD>
+ Do not read either the system-wide startup file
+ 
+-<A HREF="file:/etc/profile"><I>/etc/profile</I></A>
++<A HREF="file:/QOpenSys/etc/profile"><I>/QOpenSys/etc/profile</I></A>
+ 
+ or any of the personal initialization files
+ <A HREF="file:~/.bash_profile"><I>~/.bash_profile</I></A>,
+@@ -403,7 +403,7 @@
+ 
+ is invoked as an interactive login shell, or as a non-interactive shell
+ with the <B>--login</B> option, it first reads and
+-executes commands from the file <A HREF="file:/etc/profile"><I>/etc/profile</I></A>, if that
++executes commands from the file <A HREF="file:/QOpenSys/etc/profile"><I>/QOpenSys/etc/profile</I></A>, if that
+ file exists.
+ After reading that file, it looks for <A HREF="file:~/.bash_profile"><I>~/.bash_profile</I></A>,
+ <A HREF="file:~/.bash_login"><I>~/.bash_login</I></A>, and <A HREF="file:~/.profile"><I>~/.profile</I></A>, in that order, and reads
+@@ -477,7 +477,7 @@
+ When invoked as an interactive login shell, or a non-interactive
+ shell with the <B>--login</B> option, it first attempts to
+ read and execute commands from
+-<A HREF="file:/etc/profile"><I>/etc/profile</I></A>
++<A HREF="file:/QOpenSys/etc/profile"><I>/QOpenSys/etc/profile</I></A>
+ 
+ and
+ <A HREF="file:~/.profile"><I>~/.profile</I></A>,
+@@ -13393,7 +13393,7 @@
+ <DD>
+ The <B>bash</B> executable
+ <DT>
+-<A HREF="file:/etc/profile"><I>/etc/profile</I></A>
++<A HREF="file:/QOpenSys/etc/profile"><I>/QOpenSys/etc/profile</I></A>
+ 
+ <DD>
+ The systemwide initialization file, executed for login shells
+diff -ru a/doc/bash.info b/doc/bash.info
+--- a/doc/bash.info	2016-09-07 16:14:18.000000000 -0500
++++ b/doc/bash.info	2017-02-22 17:43:58.695459966 -0600
+@@ -5396,7 +5396,7 @@
+      to read command lines when the shell is interactive.
+ 
+ '--noprofile'
+-     Don't load the system-wide startup file '/etc/profile' or any of
++     Don't load the system-wide startup file '/QOpenSys/etc/profile' or any of
+      the personal initialization files '~/.bash_profile',
+      '~/.bash_login', or '~/.profile' when Bash is invoked as a login
+      shell.
+@@ -5511,7 +5511,7 @@
+ 
+ When Bash is invoked as an interactive login shell, or as a
+ non-interactive shell with the '--login' option, it first reads and
+-executes commands from the file '/etc/profile', if that file exists.
++executes commands from the file '/QOpenSys/etc/profile', if that file exists.
+ After reading that file, it looks for '~/.bash_profile',
+ '~/.bash_login', and '~/.profile', in that order, and reads and executes
+ commands from the first one that exists and is readable.  The
+@@ -5560,7 +5560,7 @@
+ 
+    When invoked as an interactive login shell, or as a non-interactive
+ shell with the '--login' option, it first attempts to read and execute
+-commands from '/etc/profile' and '~/.profile', in that order.  The
++commands from '/QOpenSys/etc/profile' and '~/.profile', in that order.  The
+ '--noprofile' option may be used to inhibit this behavior.  When invoked
+ as an interactive shell with the name 'sh', Bash looks for the variable
+ 'ENV', expands its value if it is defined, and uses the expanded value
+diff -ru a/doc/bashref.html b/doc/bashref.html
+--- a/doc/bashref.html	2016-09-07 16:14:25.000000000 -0500
++++ b/doc/bashref.html	2017-02-22 17:43:58.591459349 -0600
+@@ -7471,7 +7471,7 @@
+ </p>
+ </dd>
+ <dt><code>--noprofile</code></dt>
+-<dd><p>Don&rsquo;t load the system-wide startup file <samp>/etc/profile</samp>
++<dd><p>Don&rsquo;t load the system-wide startup file <samp>/QOpenSys/etc/profile</samp>
+ or any of the personal initialization files
+ <samp>~/.bash_profile</samp>, <samp>~/.bash_login</samp>, or <samp>~/.profile</samp>
+ when Bash is invoked as a login shell.
+@@ -7619,7 +7619,7 @@
+ 
+ <p>When Bash is invoked as an interactive login shell, or as a
+ non-interactive shell with the <samp>--login</samp> option, it first reads and
+-executes commands from the file <samp>/etc/profile</samp>, if that file exists.
++executes commands from the file <samp>/QOpenSys/etc/profile</samp>, if that file exists.
+ After reading that file, it looks for <samp>~/.bash_profile</samp>,
+ <samp>~/.bash_login</samp>, and <samp>~/.profile</samp>, in that order, and reads
+ and executes commands from the first one that exists and is readable.
+@@ -7673,7 +7673,7 @@
+ </p>
+ <p>When invoked as an interactive login shell, or as a non-interactive
+ shell with the <samp>--login</samp> option, it first attempts to read
+-and execute commands from <samp>/etc/profile</samp> and <samp>~/.profile</samp>, in
++and execute commands from <samp>/QOpenSys/etc/profile</samp> and <samp>~/.profile</samp>, in
+ that order.
+ The <samp>--noprofile</samp> option may be used to inhibit this behavior.
+ When invoked as an interactive shell with the name <code>sh</code>, Bash
+diff -ru a/doc/bashref.info b/doc/bashref.info
+--- a/doc/bashref.info	2016-09-07 16:14:18.000000000 -0500
++++ b/doc/bashref.info	2017-02-22 17:43:58.723460131 -0600
+@@ -5396,7 +5396,7 @@
+      to read command lines when the shell is interactive.
+ 
+ '--noprofile'
+-     Don't load the system-wide startup file '/etc/profile' or any of
++     Don't load the system-wide startup file '/QOpenSys/etc/profile' or any of
+      the personal initialization files '~/.bash_profile',
+      '~/.bash_login', or '~/.profile' when Bash is invoked as a login
+      shell.
+@@ -5511,7 +5511,7 @@
+ 
+ When Bash is invoked as an interactive login shell, or as a
+ non-interactive shell with the '--login' option, it first reads and
+-executes commands from the file '/etc/profile', if that file exists.
++executes commands from the file '/QOpenSys/etc/profile', if that file exists.
+ After reading that file, it looks for '~/.bash_profile',
+ '~/.bash_login', and '~/.profile', in that order, and reads and executes
+ commands from the first one that exists and is readable.  The
+@@ -5560,7 +5560,7 @@
+ 
+    When invoked as an interactive login shell, or as a non-interactive
+ shell with the '--login' option, it first attempts to read and execute
+-commands from '/etc/profile' and '~/.profile', in that order.  The
++commands from '/QOpenSys/etc/profile' and '~/.profile', in that order.  The
+ '--noprofile' option may be used to inhibit this behavior.  When invoked
+ as an interactive shell with the name 'sh', Bash looks for the variable
+ 'ENV', expands its value if it is defined, and uses the expanded value
+diff -ru a/doc/bashref.texi b/doc/bashref.texi
+--- a/doc/bashref.texi	2016-09-07 16:13:36.000000000 -0500
++++ b/doc/bashref.texi	2017-02-22 17:43:58.671459823 -0600
+@@ -6223,7 +6223,7 @@
+ to read  command lines when the shell is interactive.
+ 
+ @item --noprofile
+-Don't load the system-wide startup file @file{/etc/profile}
++Don't load the system-wide startup file @file{/QOpenSys/etc/profile}
+ or any of the personal initialization files
+ @file{~/.bash_profile}, @file{~/.bash_login}, or @file{~/.profile}
+ when Bash is invoked as a login shell.
+@@ -6350,7 +6350,7 @@
+ 
+ When Bash is invoked as an interactive login shell, or as a
+ non-interactive shell with the @option{--login} option, it first reads and
+-executes commands from the file @file{/etc/profile}, if that file exists.
++executes commands from the file @file{/QOpenSys/etc/profile}, if that file exists.
+ After reading that file, it looks for @file{~/.bash_profile},
+ @file{~/.bash_login}, and @file{~/.profile}, in that order, and reads
+ and executes commands from the first one that exists and is readable.
+@@ -6403,7 +6403,7 @@
+ 
+ When invoked as an interactive login shell, or as a non-interactive
+ shell with the @option{--login} option, it first attempts to read
+-and execute commands from @file{/etc/profile} and @file{~/.profile}, in
++and execute commands from @file{/QOpenSys/etc/profile} and @file{~/.profile}, in
+ that order.
+ The @option{--noprofile} option may be used to inhibit this behavior.
+ When invoked as an interactive shell with the name @code{sh}, Bash
+diff -ru a/doc/FAQ b/doc/FAQ
+--- a/doc/FAQ	2016-08-31 09:43:53.000000000 -0500
++++ b/doc/FAQ	2017-02-22 17:43:58.651459705 -0600
+@@ -1836,7 +1836,7 @@
+ 
+ 	export LC_COLLATE=C
+ 
+-into /etc/profile and inspect any shell scripts run from cron for
++into /QOpenSys/etc/profile and inspect any shell scripts run from cron for
+ constructs like [A-Z].  This will prevent things like
+ 
+ 	rm [A-Z]*
+@@ -2114,12 +2114,12 @@
+ 
+ The long answer is that they shipped an /etc/inputrc that only works
+ for emacs mode editing, and then screwed all the vi users by setting
+-INPUTRC to /etc/inputrc in /etc/profile.
++INPUTRC to /etc/inputrc in /QOpenSys/etc/profile.
+ 
+ The short fix is to do one of the following: remove or rename
+ /etc/inputrc, set INPUTRC=~/.inputrc in ~/.bashrc (or .bash_profile,
+ but make sure you export it if you do), remove the assignment to
+-INPUTRC from /etc/profile, add
++INPUTRC from /QOpenSys/etc/profile, add
+ 
+         set keymap emacs
+ 
+diff -ru a/doc/htmlpost.sh b/doc/htmlpost.sh
+--- a/doc/htmlpost.sh	1999-10-05 09:58:31.000000000 -0500
++++ b/doc/htmlpost.sh	2017-02-22 17:43:58.643459657 -0600
+@@ -8,7 +8,7 @@
+ 
+ sed -e 's|<B>gnu.bash.bug</B>|<A HREF="news:gnu.bash.bug">gnu.bash.bug</A>|g' \
+     -e 's|<I>/bin/bash</I>|<A HREF="file:/bin/bash"><I>/bin/bash</I></A>|g' \
+-    -e 's|<I>/etc/profile</I>|<A HREF="file:/etc/profile"><I>/etc/profile</I></A>|g' \
++    -e 's|<I>/QOpenSys/etc/profile</I>|<A HREF="file:/QOpenSys/etc/profile"><I>/QOpenSys/etc/profile</I></A>|g' \
+     -e 's|<I>~/.bash_profile</I>|<A HREF="file:~/.bash_profile"><I>~/.bash_profile</I></A>|g' \
+     -e 's|<I>~/.bash_login</I>|<A HREF="file:~/.bash_login"><I>~/.bash_login</I></A>|g' \
+     -e 's|<I>~/.profile</I>|<A HREF="file:~/.profile"><I>~/.profile</I></A>|g' \

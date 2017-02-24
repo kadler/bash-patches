@@ -235,3 +235,15 @@ diff -ru a/doc/htmlpost.sh b/doc/htmlpost.sh
      -e 's|<I>~/.bash_profile</I>|<A HREF="file:~/.bash_profile"><I>~/.bash_profile</I></A>|g' \
      -e 's|<I>~/.bash_login</I>|<A HREF="file:~/.bash_login"><I>~/.bash_login</I></A>|g' \
      -e 's|<I>~/.profile</I>|<A HREF="file:~/.profile"><I>~/.profile</I></A>|g' \
+diff -ru a/pathnames.h.in b/pathnames.h.in
+--- a/pathnames.h.in	2009-01-04 13:32:40.000000000 -0600
++++ b/pathnames.h.in	2017-02-24 14:44:08.086356917 -0600
+@@ -25,7 +25,7 @@
+ #define DEFAULT_HOSTS_FILE "/etc/hosts"
+ 
+ /* The default login shell startup file. */
+-#define SYS_PROFILE "/etc/profile"
++#define SYS_PROFILE "/QOpenSys/etc/profile"
+ 
+ /* The default location of the bash debugger initialization/startup file. */
+ #define DEBUGGER_START_FILE	"@DEBUGGER_START_FILE@"

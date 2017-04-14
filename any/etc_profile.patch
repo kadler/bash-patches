@@ -1,7 +1,7 @@
 diff -ru a/doc/bash.1 b/doc/bash.1
---- a/doc/bash.1	2016-08-26 08:45:17.000000000 -0500
-+++ b/doc/bash.1	2017-02-22 17:43:58.643459657 -0600
-@@ -203,7 +203,7 @@
+--- a/doc/bash.1	2014-02-06 08:03:52.000000000 -0600
++++ b/doc/bash.1	2017-04-14 11:43:29.664032611 -0500
+@@ -199,7 +199,7 @@
  .TP
  .B \-\-noprofile
  Do not read either the system-wide startup file
@@ -10,7 +10,7 @@ diff -ru a/doc/bash.1 b/doc/bash.1
  or any of the personal initialization files
  .IR ~/.bash_profile ,
  .IR ~/.bash_login ,
-@@ -315,7 +315,7 @@
+@@ -310,7 +310,7 @@
  .B bash
  is invoked as an interactive login shell, or as a non-interactive shell
  with the \fB\-\-login\fP option, it first reads and
@@ -19,7 +19,7 @@ diff -ru a/doc/bash.1 b/doc/bash.1
  file exists.
  After reading that file, it looks for \fI~/.bash_profile\fP,
  \fI~/.bash_login\fP, and \fI~/.profile\fP, in that order, and reads
-@@ -372,7 +372,7 @@
+@@ -366,7 +366,7 @@
  When invoked as an interactive login shell, or a non-interactive
  shell with the \fB\-\-login\fP option, it first attempts to
  read and execute commands from
@@ -28,7 +28,7 @@ diff -ru a/doc/bash.1 b/doc/bash.1
  and
  .IR ~/.profile ,
  in that order.
-@@ -10547,7 +10547,7 @@
+@@ -10235,7 +10235,7 @@
  .FN /bin/bash
  The \fBbash\fP executable
  .TP
@@ -38,9 +38,9 @@ diff -ru a/doc/bash.1 b/doc/bash.1
  .TP
  .FN ~/.bash_profile
 diff -ru a/doc/bash.html b/doc/bash.html
---- a/doc/bash.html	2016-08-31 09:24:29.000000000 -0500
-+++ b/doc/bash.html	2017-02-22 17:43:58.623459539 -0600
-@@ -247,7 +247,7 @@
+--- a/doc/bash.html	2014-02-24 07:28:33.000000000 -0600
++++ b/doc/bash.html	2017-04-14 11:43:29.652032538 -0500
+@@ -242,7 +242,7 @@
  <DD>
  Do not read either the system-wide startup file
  
@@ -49,7 +49,7 @@ diff -ru a/doc/bash.html b/doc/bash.html
  
  or any of the personal initialization files
  <A HREF="file:~/.bash_profile"><I>~/.bash_profile</I></A>,
-@@ -403,7 +403,7 @@
+@@ -397,7 +397,7 @@
  
  is invoked as an interactive login shell, or as a non-interactive shell
  with the <B>--login</B> option, it first reads and
@@ -58,7 +58,7 @@ diff -ru a/doc/bash.html b/doc/bash.html
  file exists.
  After reading that file, it looks for <A HREF="file:~/.bash_profile"><I>~/.bash_profile</I></A>,
  <A HREF="file:~/.bash_login"><I>~/.bash_login</I></A>, and <A HREF="file:~/.profile"><I>~/.profile</I></A>, in that order, and reads
-@@ -477,7 +477,7 @@
+@@ -470,7 +470,7 @@
  When invoked as an interactive login shell, or a non-interactive
  shell with the <B>--login</B> option, it first attempts to
  read and execute commands from
@@ -67,7 +67,7 @@ diff -ru a/doc/bash.html b/doc/bash.html
  
  and
  <A HREF="file:~/.profile"><I>~/.profile</I></A>,
-@@ -13393,7 +13393,7 @@
+@@ -13028,7 +13028,7 @@
  <DD>
  The <B>bash</B> executable
  <DT>
@@ -76,100 +76,100 @@ diff -ru a/doc/bash.html b/doc/bash.html
  
  <DD>
  The systemwide initialization file, executed for login shells
-diff -ru a/doc/bash.info b/doc/bash.info
---- a/doc/bash.info	2016-09-07 16:14:18.000000000 -0500
-+++ b/doc/bash.info	2017-02-22 17:43:58.695459966 -0600
-@@ -5396,7 +5396,7 @@
-      to read command lines when the shell is interactive.
- 
- '--noprofile'
--     Don't load the system-wide startup file '/etc/profile' or any of
-+     Don't load the system-wide startup file '/QOpenSys/etc/profile' or any of
-      the personal initialization files '~/.bash_profile',
-      '~/.bash_login', or '~/.profile' when Bash is invoked as a login
-      shell.
-@@ -5511,7 +5511,7 @@
- 
- When Bash is invoked as an interactive login shell, or as a
- non-interactive shell with the '--login' option, it first reads and
--executes commands from the file '/etc/profile', if that file exists.
-+executes commands from the file '/QOpenSys/etc/profile', if that file exists.
- After reading that file, it looks for '~/.bash_profile',
- '~/.bash_login', and '~/.profile', in that order, and reads and executes
- commands from the first one that exists and is readable.  The
-@@ -5560,7 +5560,7 @@
- 
-    When invoked as an interactive login shell, or as a non-interactive
- shell with the '--login' option, it first attempts to read and execute
--commands from '/etc/profile' and '~/.profile', in that order.  The
-+commands from '/QOpenSys/etc/profile' and '~/.profile', in that order.  The
- '--noprofile' option may be used to inhibit this behavior.  When invoked
- as an interactive shell with the name 'sh', Bash looks for the variable
- 'ENV', expands its value if it is defined, and uses the expanded value
 diff -ru a/doc/bashref.html b/doc/bashref.html
---- a/doc/bashref.html	2016-09-07 16:14:25.000000000 -0500
-+++ b/doc/bashref.html	2017-02-22 17:43:58.591459349 -0600
-@@ -7471,7 +7471,7 @@
- </p>
- </dd>
- <dt><code>--noprofile</code></dt>
--<dd><p>Don&rsquo;t load the system-wide startup file <samp>/etc/profile</samp>
-+<dd><p>Don&rsquo;t load the system-wide startup file <samp>/QOpenSys/etc/profile</samp>
+--- a/doc/bashref.html	2014-02-24 07:28:33.000000000 -0600
++++ b/doc/bashref.html	2017-04-14 11:43:29.632032413 -0500
+@@ -7825,7 +7825,7 @@
+ <P>
+ 
+ <DT><CODE>--noprofile</CODE>
+-<DD>Don't load the system-wide startup file <TT>`/etc/profile'</TT>
++<DD>Don't load the system-wide startup file <TT>`/QOpenSys/etc/profile'</TT>
  or any of the personal initialization files
- <samp>~/.bash_profile</samp>, <samp>~/.bash_login</samp>, or <samp>~/.profile</samp>
+ <TT>`~/.bash_profile'</TT>, <TT>`~/.bash_login'</TT>, or <TT>`~/.profile'</TT>
  when Bash is invoked as a login shell.
-@@ -7619,7 +7619,7 @@
- 
- <p>When Bash is invoked as an interactive login shell, or as a
- non-interactive shell with the <samp>--login</samp> option, it first reads and
--executes commands from the file <samp>/etc/profile</samp>, if that file exists.
-+executes commands from the file <samp>/QOpenSys/etc/profile</samp>, if that file exists.
- After reading that file, it looks for <samp>~/.bash_profile</samp>,
- <samp>~/.bash_login</samp>, and <samp>~/.profile</samp>, in that order, and reads
- and executes commands from the first one that exists and is readable.
-@@ -7673,7 +7673,7 @@
- </p>
- <p>When invoked as an interactive login shell, or as a non-interactive
- shell with the <samp>--login</samp> option, it first attempts to read
--and execute commands from <samp>/etc/profile</samp> and <samp>~/.profile</samp>, in
-+and execute commands from <samp>/QOpenSys/etc/profile</samp> and <samp>~/.profile</samp>, in
- that order.
- The <samp>--noprofile</samp> option may be used to inhibit this behavior.
- When invoked as an interactive shell with the name <code>sh</code>, Bash
-diff -ru a/doc/bashref.info b/doc/bashref.info
---- a/doc/bashref.info	2016-09-07 16:14:18.000000000 -0500
-+++ b/doc/bashref.info	2017-02-22 17:43:58.723460131 -0600
-@@ -5396,7 +5396,7 @@
-      to read command lines when the shell is interactive.
- 
- '--noprofile'
--     Don't load the system-wide startup file '/etc/profile' or any of
-+     Don't load the system-wide startup file '/QOpenSys/etc/profile' or any of
-      the personal initialization files '~/.bash_profile',
-      '~/.bash_login', or '~/.profile' when Bash is invoked as a login
-      shell.
-@@ -5511,7 +5511,7 @@
+@@ -7986,7 +7986,7 @@
  
  When Bash is invoked as an interactive login shell, or as a
- non-interactive shell with the '--login' option, it first reads and
--executes commands from the file '/etc/profile', if that file exists.
-+executes commands from the file '/QOpenSys/etc/profile', if that file exists.
- After reading that file, it looks for '~/.bash_profile',
- '~/.bash_login', and '~/.profile', in that order, and reads and executes
- commands from the first one that exists and is readable.  The
-@@ -5560,7 +5560,7 @@
+ non-interactive shell with the <SAMP>`--login'</SAMP> option, it first reads and
+-executes commands from the file <TT>`/etc/profile'</TT>, if that file exists.
++executes commands from the file <TT>`/QOpenSys/etc/profile'</TT>, if that file exists.
+ After reading that file, it looks for <TT>`~/.bash_profile'</TT>,
+ <TT>`~/.bash_login'</TT>, and <TT>`~/.profile'</TT>, in that order, and reads
+ and executes commands from the first one that exists and is readable.
+@@ -8047,7 +8047,7 @@
+ 
+ When invoked as an interactive login shell, or as a non-interactive
+ shell with the <SAMP>`--login'</SAMP> option, it first attempts to read
+-and execute commands from <TT>`/etc/profile'</TT> and <TT>`~/.profile'</TT>, in
++and execute commands from <TT>`/QOpenSys/etc/profile'</TT> and <TT>`~/.profile'</TT>, in
+ that order.
+ The <SAMP>`--noprofile'</SAMP> option may be used to inhibit this behavior.
+ When invoked as an interactive shell with the name <CODE>sh</CODE>, Bash
+diff -ru a/doc/bashref.info b/doc/bashref.info
+--- a/doc/bashref.info	2014-02-24 07:28:31.000000000 -0600
++++ b/doc/bashref.info	2017-04-14 11:43:29.696032809 -0500
+@@ -5314,7 +5314,7 @@
+      to read  command lines when the shell is interactive.
+ 
+ `--noprofile'
+-     Don't load the system-wide startup file `/etc/profile' or any of
++     Don't load the system-wide startup file `/QOpenSys/etc/profile' or any of
+      the personal initialization files `~/.bash_profile',
+      `~/.bash_login', or `~/.profile' when Bash is invoked as a login
+      shell.
+@@ -5426,7 +5426,7 @@
+ 
+ When Bash is invoked as an interactive login shell, or as a
+ non-interactive shell with the `--login' option, it first reads and
+-executes commands from the file `/etc/profile', if that file exists.
++executes commands from the file `/QOpenSys/etc/profile', if that file exists.
+ After reading that file, it looks for `~/.bash_profile',
+ `~/.bash_login', and `~/.profile', in that order, and reads and
+ executes commands from the first one that exists and is readable.  The
+@@ -5474,7 +5474,7 @@
  
     When invoked as an interactive login shell, or as a non-interactive
- shell with the '--login' option, it first attempts to read and execute
--commands from '/etc/profile' and '~/.profile', in that order.  The
-+commands from '/QOpenSys/etc/profile' and '~/.profile', in that order.  The
- '--noprofile' option may be used to inhibit this behavior.  When invoked
- as an interactive shell with the name 'sh', Bash looks for the variable
- 'ENV', expands its value if it is defined, and uses the expanded value
+ shell with the `--login' option, it first attempts to read and execute
+-commands from `/etc/profile' and `~/.profile', in that order.  The
++commands from `/QOpenSys/etc/profile' and `~/.profile', in that order.  The
+ `--noprofile' option may be used to inhibit this behavior.  When
+ invoked as an interactive shell with the name `sh', Bash looks for the
+ variable `ENV', expands its value if it is defined, and uses the
+diff -ru a/doc/bashref.ps b/doc/bashref.ps
+--- a/doc/bashref.ps	2014-02-24 07:28:31.000000000 -0600
++++ b/doc/bashref.ps	2017-04-14 11:43:29.724032981 -0500
+@@ -13720,7 +13720,7 @@
+ f(Line)g(Editing],)630 4130 y(page)h(101\))h(to)f(read)g(command)f
+ (lines)g(when)g(the)g(shell)h(is)f(in)m(teractiv)m(e.)150
+ 4277 y Ft(--noprofile)630 4387 y Fu(Don't)22 b(load)g(the)g
+-(system-wide)f(startup)g(\014le)h Ft(/etc/profile)c Fu(or)j(an)m(y)h
++(system-wide)f(startup)g(\014le)h Ft(/QOpenSys/etc/profile)c Fu(or)j(an)m(y)h
+ (of)f(the)h(p)s(ersonal)f(ini-)630 4496 y(tialization)34
+ b(\014les)e Ft(~/.bash_profile)p Fu(,)c Ft(~/.bash_login)p
+ Fu(,)g(or)k Ft(~/.profile)c Fu(when)j(Bash)630 4606 y(is)f(in)m(v)m(ok)
+@@ -13850,7 +13850,7 @@
+ (v)m(ok)m(ed)h(as)f(an)g(in)m(teractiv)m(e)j(login)d(shell,)i(or)e(as)g
+ (a)g(non-in)m(teractiv)m(e)i(shell)e(with)g(the)150 2626
+ y Ft(--login)30 b Fu(option,)k(it)f(\014rst)e(reads)h(and)g(executes)i
+-(commands)e(from)f(the)i(\014le)f Ft(/etc/profile)p Fu(,)e(if)i(that)
++(commands)e(from)f(the)i(\014le)f Ft(/QOpenSys/etc/profile)p Fu(,)e(if)i(that)
+ 150 2736 y(\014le)44 b(exists.)80 b(After)44 b(reading)g(that)g
+ (\014le,)j(it)d(lo)s(oks)g(for)f Ft(~/.bash_profile)p
+ Fu(,)g Ft(~/.bash_login)p Fu(,)h(and)150 2845 y Ft(~/.profile)p
+@@ -13904,7 +13904,7 @@
+ y(When)50 b(in)m(v)m(ok)m(ed)j(as)f(an)f(in)m(teractiv)m(e)j(login)e
+ (shell,)57 b(or)51 b(as)g(a)h(non-in)m(teractiv)m(e)h(shell)f(with)f
+ (the)150 1120 y Ft(--login)31 b Fu(option,)k(it)e(\014rst)g(attempts)h
+-(to)g(read)f(and)g(execute)h(commands)f(from)g Ft(/etc/profile)d
++(to)g(read)f(and)g(execute)h(commands)f(from)g Ft(/QOpenSys/etc/profile)d
+ Fu(and)150 1230 y Ft(~/.profile)p Fu(,)d(in)i(that)i(order.)39
+ b(The)30 b Ft(--noprofile)c Fu(option)k(ma)m(y)g(b)s(e)f(used)g(to)h
+ (inhibit)f(this)h(b)s(eha)m(vior.)150 1339 y(When)36
 diff -ru a/doc/bashref.texi b/doc/bashref.texi
---- a/doc/bashref.texi	2016-09-07 16:13:36.000000000 -0500
-+++ b/doc/bashref.texi	2017-02-22 17:43:58.671459823 -0600
-@@ -6223,7 +6223,7 @@
+--- a/doc/bashref.texi	2014-02-22 12:20:36.000000000 -0600
++++ b/doc/bashref.texi	2017-04-14 11:43:29.680032711 -0500
+@@ -6043,7 +6043,7 @@
  to read  command lines when the shell is interactive.
  
  @item --noprofile
@@ -178,7 +178,7 @@ diff -ru a/doc/bashref.texi b/doc/bashref.texi
  or any of the personal initialization files
  @file{~/.bash_profile}, @file{~/.bash_login}, or @file{~/.profile}
  when Bash is invoked as a login shell.
-@@ -6350,7 +6350,7 @@
+@@ -6167,7 +6167,7 @@
  
  When Bash is invoked as an interactive login shell, or as a
  non-interactive shell with the @option{--login} option, it first reads and
@@ -187,7 +187,7 @@ diff -ru a/doc/bashref.texi b/doc/bashref.texi
  After reading that file, it looks for @file{~/.bash_profile},
  @file{~/.bash_login}, and @file{~/.profile}, in that order, and reads
  and executes commands from the first one that exists and is readable.
-@@ -6403,7 +6403,7 @@
+@@ -6218,7 +6218,7 @@
  
  When invoked as an interactive login shell, or as a non-interactive
  shell with the @option{--login} option, it first attempts to read
@@ -197,9 +197,9 @@ diff -ru a/doc/bashref.texi b/doc/bashref.texi
  The @option{--noprofile} option may be used to inhibit this behavior.
  When invoked as an interactive shell with the name @code{sh}, Bash
 diff -ru a/doc/FAQ b/doc/FAQ
---- a/doc/FAQ	2016-08-31 09:43:53.000000000 -0500
-+++ b/doc/FAQ	2017-02-22 17:43:58.651459705 -0600
-@@ -1836,7 +1836,7 @@
+--- a/doc/FAQ	2014-02-11 16:07:30.000000000 -0600
++++ b/doc/FAQ	2017-04-14 11:43:29.668032636 -0500
+@@ -1834,7 +1834,7 @@
  
  	export LC_COLLATE=C
  
@@ -208,7 +208,7 @@ diff -ru a/doc/FAQ b/doc/FAQ
  constructs like [A-Z].  This will prevent things like
  
  	rm [A-Z]*
-@@ -2114,12 +2114,12 @@
+@@ -2112,12 +2112,12 @@
  
  The long answer is that they shipped an /etc/inputrc that only works
  for emacs mode editing, and then screwed all the vi users by setting
@@ -225,7 +225,7 @@ diff -ru a/doc/FAQ b/doc/FAQ
  
 diff -ru a/doc/htmlpost.sh b/doc/htmlpost.sh
 --- a/doc/htmlpost.sh	1999-10-05 09:58:31.000000000 -0500
-+++ b/doc/htmlpost.sh	2017-02-22 17:43:58.643459657 -0600
++++ b/doc/htmlpost.sh	2017-04-14 11:43:29.664032611 -0500
 @@ -8,7 +8,7 @@
  
  sed -e 's|<B>gnu.bash.bug</B>|<A HREF="news:gnu.bash.bug">gnu.bash.bug</A>|g' \
@@ -237,7 +237,7 @@ diff -ru a/doc/htmlpost.sh b/doc/htmlpost.sh
      -e 's|<I>~/.profile</I>|<A HREF="file:~/.profile"><I>~/.profile</I></A>|g' \
 diff -ru a/pathnames.h.in b/pathnames.h.in
 --- a/pathnames.h.in	2009-01-04 13:32:40.000000000 -0600
-+++ b/pathnames.h.in	2017-02-24 14:44:08.086356917 -0600
++++ b/pathnames.h.in	2017-04-14 11:44:20.712347217 -0500
 @@ -25,7 +25,7 @@
  #define DEFAULT_HOSTS_FILE "/etc/hosts"
  
